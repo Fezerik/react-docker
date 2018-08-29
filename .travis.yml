@@ -4,7 +4,7 @@ services:
 
 
 before_install:
-  - docker build -t fezerik/react-docker Dockerfile .
+  - docker build -t fezerik/react-docker -f Dockerfile.dev .
 
 script:
   - docker run fezerik/react-docker npm run test -- --coverage
