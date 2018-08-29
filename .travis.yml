@@ -4,7 +4,7 @@ services:
 
 
 before_install:
-  - docker build -t fezerik/react-docker -f Dockerfile.dev .
+  - docker build -t fezerik/react-docker Dockerfile .
 
 script:
   - docker run fezerik/react-docker npm run test -- --coverage
@@ -19,5 +19,5 @@ deploy:
   on:
     branch: master
   access_key_id: $AWS_ACCESS_KEY
-    secret_access_key:
-      secure: "$AWS_SECRET_KEY"
+  secret_access_key:
+    secure: "$AWS_SECRET_KEY"
